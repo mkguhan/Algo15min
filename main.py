@@ -197,7 +197,7 @@ if __name__ == "__main__":
                     else:
                         target = ohlc15min.iloc[-1]['close'] - 10
                     print("Strategy: Shooting Star;  Scrip Name: {}".format(script_token[scrip]))
-                    print("Sell at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[-1]['close'], ohlc15min.iloc[-1]['high'],
+                    print("Sell at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[0]['close'], ohlc15min.iloc[0]['high'],
                                                                          target))
                 if is_hammer_check:
                     #print("Hammer")
@@ -212,7 +212,7 @@ if __name__ == "__main__":
                         target = ohlc15min.iloc[0]['close'] - 10
 
                     print(" Strategy: Hammer;  Scrip Name: {}".format(script_token[scrip]))
-                    print("Sell at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[-1]['close'], ohlc15min.iloc[-1]['high'],
+                    print("Sell at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[0]['close'], ohlc15min.iloc[0]['high'],
                                                                          target))
 
                 if is_inverted_hammer_chk:
@@ -228,7 +228,7 @@ if __name__ == "__main__":
                         target = ohlc15min.iloc[0]['close'] + 10
 
                     print("Strategy: Inverted Hammer;  Scrip Name: {}".format(script_token[scrip]))
-                    print("Buy at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[-1]['close'], ohlc15min.iloc[-1]['low'], target))
+                    print("Buy at {} ; Stop Loss {} ; Target {}".format(ohlc15min.iloc[0]['close'], ohlc15min.iloc[0]['low'], target))
 
         else:
             print("Subscription Failure")
