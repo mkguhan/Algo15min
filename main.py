@@ -169,9 +169,10 @@ if __name__ == "__main__":
             count =0
             for scrip in token:
                 if count == 10:
-                    time.sleep(70)
-                    count = 0
-                    print("Sleeping ...")
+                    #time.sleep(70)
+                    #count = 0
+                    #print("Sleeping ...")
+                    pass
                 count = count + 1
                 data, get_data_status = get_tick_data(auth_token, scrip)
                 if get_data_status:
