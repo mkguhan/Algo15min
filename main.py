@@ -201,12 +201,12 @@ if __name__ == "__main__":
                                                                          target))
                 if is_hammer_check:
                     #print("Hammer")
-                    open = ohlc15min.iloc[0]['open']
-                    if open < 500:
+                    open_p = ohlc15min.iloc[0]['open']
+                    if open_p < 500:
                         target = ohlc15min.iloc[0]['close'] - 2
-                    elif 500 < open < 1000:
+                    elif 500 < open_p < 1000:
                         target = ohlc15min.iloc[0]['close'] - 4
-                    elif 1000 < open < 2000:
+                    elif 1000 < open_p < 2000:
                         target = ohlc15min.iloc[0]['close'] - 8
                     else:
                         target = ohlc15min.iloc[0]['close'] - 10
@@ -217,12 +217,12 @@ if __name__ == "__main__":
 
                 if is_inverted_hammer_chk:
                     #print("Inverted Hammer")
-                    open = ohlc15min.iloc[-1]['open']
-                    if open < 500:
+                    open_p = ohlc15min.iloc[-1]['open']
+                    if open_p < 500:
                         target = ohlc15min.iloc[0]['close'] + 2
-                    elif 500 < open < 1000:
+                    elif 500 < open_p < 1000:
                         target = ohlc15min.iloc[0]['close'] + 4
-                    elif 1000 < open < 2000:
+                    elif 1000 < open_p < 2000:
                         target = ohlc15min.iloc[0]['close'] + 8
                     else:
                         target = ohlc15min.iloc[0]['close'] + 10
