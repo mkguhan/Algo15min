@@ -77,10 +77,13 @@ def is_hammer(data_s):
         body = open_p - close
     else:
         body = close - open_p
-
-    low_wick_per = body / 1.5
+    if body > 2:
+        low_wick_per = body / 1.5
+    else:
+        low_wick_per = 1.5
     if open_p > close and (close - low) < low_wick_per :
-       if (1.75*(open_p-close)) < (high - open_p ) < (3.6*(open_p-close)):
+       #if (1.75*(open_p-close)) < (high - open_p ) < (3.6*(open_p-close)):
+       if (1.75 * (open_p - close)) < (high - open_p):
             #print("Open: {} High {} Low {} Close{}".format(open_p,high,low,close))
             return True
        else:
@@ -105,7 +108,8 @@ def is_inverted_hammer(data_s):
        #low_wick_per = 1.5
 
     if open_p < close and (high - close) <= low_wick_per:
-       if (1.75*(close-open_p)) < (open_p - low) < (3.6*(close - open_p)):
+       #if (1.75*(close-open_p)) < (open_p - low) < (3.6*(close - open_p)):
+       if (1.75 * (close - open_p)) < (open_p - low):
           #print("Open: {} High {} Low {} Close{}".format(open_p, high, low, close))
           return True
        else:
